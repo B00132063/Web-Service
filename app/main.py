@@ -29,6 +29,7 @@ def get_all():
 
 # Health check route to verify the API is responsive
 @app.get("/health")
+@app.head("/health")
 def health():
     return {"status": "ok"}
 
