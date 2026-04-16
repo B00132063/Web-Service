@@ -27,6 +27,11 @@ def get_all():
     products = list(products_collection.find({}, {"_id": 0}))
     return products
 
+# Health check route to verify the API is responsive
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 # Get one product by ProductID
 @app.get("/getSingleProduct")
